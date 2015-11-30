@@ -2,6 +2,7 @@
 PRODUCT_PACKAGES += \
     camera.msm8916 \
     libmm-qcamera \
+    libshim_camera \
     Snap
 
 # Build libstlport for vendor blobs

@@ -77,8 +77,8 @@ TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
 BOARD_NO_SECURE_DISCARD := true
 
 # SELinux
-BOARD_SEPOLICY_DIRS += \
-    $(DEVICE_PATH)/sepolicy
+#BOARD_SEPOLICY_DIRS += \
+    #$(DEVICE_PATH)/sepolicy
 
 
 # inherit from the proprietary version

@@ -1,8 +1,6 @@
 /*
-   Copyright (c) 2016, The Linux Foundation. All rights reserved.
-   Copyright (C) 2016, The CyanogenMod Project
-   Copyright (C) 2015-2016, Ketut P. Kumajaya
-   Copyright (C) 2016-2017, Nikolai Petrenko
+   Copyright (c) 2014, The Linux Foundation. All rights reserved.
+   Copyright (C) 2015-2016, The CyanogenMod Project
    Copyright (C) 2017, The LineageOS Project
 
    Redistribution and use in source and binary forms, with or without

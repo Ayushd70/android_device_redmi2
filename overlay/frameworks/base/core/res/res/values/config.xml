@@ -240,4 +240,11 @@
     <!-- Our modem doesn't support this query yet -->
     <string name="config_radio_access_family">GPRS|EDGE|UMTS|HSDPA|HSUPA|HSPA|LTE|HSPAP|GSM|TD_SCDMA|WCDMA|LTE_CA</string>
 
+    <!-- Default list of files pinned by the Pinner Service -->
+    <string-array translatable="false" name="config_defaultPinnerServiceFiles">
+        <item>"/system/framework/arm/boot-framework.oat"</item>
+        <item>"/system/framework/oat/arm/services.odex"</item>
+        <item>"/system/framework/arm/boot.oat"</item>
+        <item>"/system/framework/arm/boot-core-libart.oat"</item>
+    </string-array>
 </resources>

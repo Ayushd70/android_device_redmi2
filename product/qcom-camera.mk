@@ -4,11 +4,8 @@ PRODUCT_PACKAGES += \
     libboringssl-compat \
     libmm-qcamera \
     libshim_camera \
+    libstlport \
     Snap
-
-# Build libstlport for vendor blobs
-PRODUCT_PACKAGES += \
-    libstlport
 
 # Permissions
 PRODUCT_COPY_FILES += \

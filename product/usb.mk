@@ -1,3 +1,7 @@
+# Permissions
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.usb.host.xml:system/etc/permissions/android.hardware.usb.host.xml
+
 # USB ID
 ADDITIONAL_DEFAULT_PROPERTIES += \
     ro.usb.id.midi=90BA \
@@ -9,7 +13,3 @@ ADDITIONAL_DEFAULT_PROPERTIES += \
     ro.usb.id.ums=ff20 \
     ro.usb.id.ums_adb=ff28 \
     ro.usb.vid=2717 
-
-# Permissions
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.usb.host.xml:system/etc/permissions/android.hardware.usb.host.xml

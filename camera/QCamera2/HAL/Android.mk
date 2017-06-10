@@ -73,7 +73,7 @@ LOCAL_C_INCLUDES += \
         $(call project-path-for,qcom-display)/libqservice
 
 #ifeq ($(TARGET_USE_VENDOR_CAMERA_EXT),true)
-#LOCAL_C_INCLUDES += $(call project-path-for,qcom-display)/msm8974/libgralloc
+#LOCAL_C_INCLUDES += $(call project-path-for,qcom-display)/libgralloc
 #else
 LOCAL_C_INCLUDES += $(call project-path-for,qcom-display)/libgralloc
 #endif

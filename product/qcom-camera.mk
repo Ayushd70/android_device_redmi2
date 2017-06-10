@@ -1,7 +1,6 @@
 # Camera
 PRODUCT_PACKAGES += \
     camera.msm8916 \
-    libboringssl-compat \
     libmm-qcamera \
     libshim_camera \
     libstlport \

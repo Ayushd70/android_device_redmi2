@@ -229,7 +229,7 @@ SkBitmap * CameraContext::PiPCopyToOneFile(
     unsigned int dstOffset;
     unsigned int srcOffset;
 
-    if (bitmap0 == NULL || bitmap1 == NULL) {
+    if (bitmap0 == NULL && bitmap1 == NULL) {
         return NULL;
     }
 
@@ -363,10 +363,6 @@ status_t CameraContext::encodeJPEG(SkWStream * stream,
     int qFactor = 100;
 
     skJpegEnc = SkImageEncoder::Create(SkImageEncoder::kJPEG_Type);
-    if (!skJpegEnc) {
-        ALOGE("%s: skJpegEnc is NULL\n", __func__);
-        return BAD_VALUE;
-    }
 
     if (skJpegEnc->encodeStream(stream, *bitmap, qFactor) == false) {
         return BAD_VALUE;
@@ -511,13 +507,6 @@ status_t CameraContext::ReadSectionsFromBuffer (unsigned char *buffer,
 
         CheckSectionsAllocated();
 
-        // The call to CheckSectionsAllocated() may reallocate mSections
-        // so need to check for NULL again.
-        if (mSections == NULL) {
-            printf("%s: not enough memory\n", __func__);
-            return NO_MEMORY;
-        }
-
         for (a=0;a<=16;a++){
             marker = buffer[pos++];
             if (marker != 0xff) break;
@@ -588,14 +577,6 @@ status_t CameraContext::ReadSectionsFromBuffer (unsigned char *buffer,
                     memcpy(Data, buffer+pos, size);
 
                     CheckSectionsAllocated();
-
-                    // Call to CheckSectionsAllocated may reallocate mSections
-                    // so need to check for NULL again.
-                    if (mSections == NULL) {
-                        printf("%s: not enough memory\n", __func__);
-                        return NO_MEMORY;
-                    }
-
                     mSections[mSectionsRead].Data = Data;
                     mSections[mSectionsRead].Size = size;
                     mSections[mSectionsRead].Type = PSEUDO_IMAGE_MARKER;
@@ -884,20 +865,8 @@ void CameraContext::postData(int32_t msgType,
                     }
 
                     mJEXIFTmp = FindSection(M_EXIF);
-                    if (!mJEXIFTmp) {
-                        ALOGE("%s:mJEXIFTmp is null\n", __func__);
-                        DiscardData();
-                        DiscardSections();
-                        return;
-                    }
                     mJEXIFSection = *mJEXIFTmp;
                     mJEXIFSection.Data = (unsigned char*)malloc(mJEXIFTmp->Size);
-                    if (!mJEXIFSection.Data) {
-                        ALOGE("%s: Not enough memory\n", __func__);
-                        DiscardData();
-                        DiscardSections();
-                        return;
-                    }
                     memcpy(mJEXIFSection.Data,
                         mJEXIFTmp->Data, mJEXIFTmp->Size);
                     DiscardData();
@@ -906,12 +875,6 @@ void CameraContext::postData(int32_t msgType,
                     wStream = new SkFILEWStream(jpegPath.string());
                     skBMDec = PiPCopyToOneFile(&mInterpr->camera[0]->skBMtmp,
                             &mInterpr->camera[1]->skBMtmp);
-                    if (!skBMDec) {
-                        ALOGE("%s:skBMDec is null\n", __func__);
-                        delete wStream;
-                        return;
-                    }
-
                     if (encodeJPEG(wStream, skBMDec, jpegPath) != false) {
                         printf("%s():%d:: Failed during jpeg encode\n",
                                 __FUNCTION__, __LINE__);
@@ -1013,7 +976,7 @@ void CameraContext::dataCallbackTimestamp(nsecs_t timestamp,
         mInterpr->mViVBuff.YScanLines = srcYScanLines;
         mInterpr->mViVBuff.UVScanLines = srcUVScanLines;
 
-        memcpy( mInterpr->mViVBuff.buff, dstBuff,
+        memcpy( mInterpr->mViVBuff.buff, (void *) dataPtr->pointer(),
             mInterpr->mViVBuff.buffSize);
 
         mInterpr->mViVVid.isBuffValid = true;

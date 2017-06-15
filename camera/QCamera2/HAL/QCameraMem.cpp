@@ -1303,10 +1303,6 @@ int QCameraVideoMemory::allocate(uint8_t count, size_t size)
 
 
         native_handle_t * nh = mNativeHandle[i];
-        if (!nh) {
-            ALOGE("%s: Error in getting video native handle", __func__);
-            return NO_MEMORY;
-        }
         nh->data[0] = mMemInfo[i].fd;
         nh->data[1] = 0;
         nh->data[2] = (int)mMemInfo[i].size;
@@ -1365,10 +1361,6 @@ int QCameraVideoMemory::allocateMore(uint8_t count, size_t size)
 #endif
 
         native_handle_t * nh = mNativeHandle[i];
-        if (!nh) {
-            ALOGE("%s: Error in getting video native handle", __func__);
-            return NO_MEMORY;
-        }
         nh->data[0] = mMemInfo[i].fd;
         nh->data[1] = 0;
         nh->data[2] = (int)mMemInfo[i].size;

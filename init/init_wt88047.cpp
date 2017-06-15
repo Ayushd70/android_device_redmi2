@@ -41,66 +41,63 @@
 
 #include "init_msm8916.h"
 
-using namespace std;
+char const *heapstartsize;
+char const *heapgrowthlimit;
+char const *heapsize;
+char const *heapminfree;
 
-int is2GB()
+void check_device()
 {
     struct sysinfo sys;
+
     sysinfo(&sys);
-    return sys.totalram > 1024ull * 1024 * 1024;
+
+    if (sys.totalram > 1024ull * 1024 * 1024) {
+        // from - phone-xhdpi-2048-dalvik-heap.mk
+        heapstartsize = "8m";
+        heapgrowthlimit = "192m";
+        heapsize = "512m";
+        heapminfree = "512k";
+    } else {
+        // from - phone-xhdpi-1024-dalvik-heap.mk
+        heapstartsize = "8m";
+        heapgrowthlimit = "96m";
+        heapsize = "256m";
+        heapminfree = "2m";
+    }
 }
 
 void init_target_properties()
 {
-    ifstream fin;
-    string buf;
+    check_device();
 
-    string product = property_get("ro.product.name");
-    if (product.find("wt88047") == string::npos)
-        return;
+    property_set("dalvik.vm.heapstartsize", heapstartsize);
+    property_set("dalvik.vm.heapgrowthlimit", heapgrowthlimit);
+    property_set("dalvik.vm.heapsize", heapsize);
+    property_set("dalvik.vm.heaptargetutilization", "0.75");
+    property_set("dalvik.vm.heapminfree", heapminfree);
+    property_set("dalvik.vm.heapmaxfree", "8m");
+
+    std::ifstream fin;
+    std::string buf;
 
     fin.open("/proc/cmdline");
     while (getline(fin, buf, ' '))
-        if (buf.find("board_id") != string::npos)
+        if (buf.find("board_id") != std::string::npos)
             break;
     fin.close();
 
-    /* S88047E1 */
-    if (buf.find("S88047E1") != string::npos) {
-        property_set("ro.build.product", "HM2014817");
-        property_set("ro.product.device", "HM2014817");
-        property_set("ro.product.model", "2014817");
-        property_set("ro.product.name", "2014817");
+    /* S88047A1 and S88047A2 */
+    if ((buf.find("S88047A1") != std::string::npos) ||
+        (buf.find("S88047A2") != std::string::npos)) {
+        property_set("ro.build.product", "HM2014811");
+        property_set("ro.product.device", "HM2014811");
+        property_set("ro.product.model", "2014811");
+        property_set("ro.product.name", "2014811");
         property_set("ro.telephony.default_network", "9,9");
-    }
-    /* S88047D1 */
-    else if (buf.find("S88047D1") != string::npos) {
-        property_set("ro.build.product", "HM2014819");
-        property_set("ro.product.device", "HM2014819");
-        property_set("ro.product.model", "2014819");
-        property_set("ro.product.name", "2014819");
-        property_set("ro.telephony.default_network", "9,9");
-    }
-    /* S88047C1 */
-    else if (buf.find("S88047C1") != string::npos) {
-        property_set("ro.build.product", "HM2014818");
-        property_set("ro.product.device", "HM2014818");
-        property_set("ro.product.model", "2014818");
-        property_set("ro.product.name", "2014818");
-        property_set("ro.telephony.default_network", "9,9");
-    }
-    /* S88047B2 */
-    else if (buf.find("S88047B2") != string::npos) {
-        property_set("ro.build.product", "HM2014821");
-        property_set("ro.product.device", "HM2014821");
-        property_set("ro.product.model", "2014821");
-        property_set("ro.product.name", "2014821");
-        property_set("ro.telephony.default_network", "22,22");
-        property_set("telephony.lteOnCdmaDevice", "1");
-        property_set("persist.radio.sglte.eons_domain", "ps");
     }
     /* S88047B1 */
-    else if (buf.find("S88047B1") != string::npos) {
+    else if (buf.find("S88047B1") != std::string::npos) {
         property_set("ro.build.product", "HM2014812");
         property_set("ro.product.device", "HM2014812");
         property_set("ro.product.model", "2014812");
@@ -109,8 +106,42 @@ void init_target_properties()
         property_set("telephony.lteOnCdmaDevice", "1");
         property_set("persist.radio.sglte.eons_domain", "ps");
     }
+    /* S88047B2 */
+    else if (buf.find("S88047B2") != std::string::npos) {
+        property_set("ro.build.product", "HM2014821");
+        property_set("ro.product.device", "HM2014821");
+        property_set("ro.product.model", "2014821");
+        property_set("ro.product.name", "2014821");
+        property_set("ro.telephony.default_network", "22,22");
+        property_set("telephony.lteOnCdmaDevice", "1");
+        property_set("persist.radio.sglte.eons_domain", "ps");
+    }
+    /* S88047C1 */
+    else if (buf.find("S88047C1") != std::string::npos) {
+        property_set("ro.build.product", "HM2014818");
+        property_set("ro.product.device", "HM2014818");
+        property_set("ro.product.model", "2014818");
+        property_set("ro.product.name", "2014818");
+        property_set("ro.telephony.default_network", "9,9");
+    }
+    /* S88047D1 */
+    else if (buf.find("S88047D1") != std::string::npos) {
+        property_set("ro.build.product", "HM2014819");
+        property_set("ro.product.device", "HM2014819");
+        property_set("ro.product.model", "2014819");
+        property_set("ro.product.name", "2014819");
+        property_set("ro.telephony.default_network", "9,9");
+    }
+    /* S88047E1 */
+    else if (buf.find("S88047E1") != std::string::npos) {
+        property_set("ro.build.product", "HM2014817");
+        property_set("ro.product.device", "HM2014817");
+        property_set("ro.product.model", "2014817");
+        property_set("ro.product.name", "2014817");
+        property_set("ro.telephony.default_network", "9,9");
+    }
     /* S86047A1 and S86047A1_CD */
-    else if (buf.find("S86047A1") != string::npos) {
+    else if (buf.find("S86047A1") != std::string::npos) {
         property_set("ro.build.product", "HM2014813");
         property_set("ro.product.device", "HM2014813");
         property_set("ro.product.model", "2014813");
@@ -118,26 +149,11 @@ void init_target_properties()
         property_set("ro.telephony.default_network", "9,9");
     }
     /* S86047A2 and S86047A2_CD */
-    else if (buf.find("S86047A2") != string::npos) {
+    else if (buf.find("S86047A2") != std::string::npos) {
         property_set("ro.build.product", "HM2014112");
         property_set("ro.product.device", "HM2014112");
         property_set("ro.product.model", "2014112");
         property_set("ro.product.name", "2014112");
         property_set("ro.telephony.default_network", "9,9");
     }
-    /* S88047A2 and S88047A1 */
-    else {
-        property_set("ro.build.product", "HM2014811");
-        property_set("ro.product.device", "HM2014811");
-        property_set("ro.product.model", "2014811");
-        property_set("ro.product.name", "2014811");
-        property_set("ro.telephony.default_network", "9,9");
-    }
-
-    property_set("dalvik.vm.heapstartsize", "8m");
-    property_set("dalvik.vm.heapgrowthlimit", is2GB() ? "192m" : "96m");
-    property_set("dalvik.vm.heapsize", is2GB() ? "512m" : "256m");
-    property_set("dalvik.vm.heaptargetutilization", "0.75");
-    property_set("dalvik.vm.heapminfree", is2GB() ? "512k" : "2m");
-    property_set("dalvik.vm.heapmaxfree", "8m");
 }

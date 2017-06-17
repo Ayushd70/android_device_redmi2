@@ -20,6 +20,12 @@ $(call inherit-product, device/cyanogen/msm8916-common/msm8916.mk)
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
+# Unified device props
+PRODUCT_SYSTEM_PROPERTY_BLACKLIST += \
+    ro.build.product \
+    ro.product.model \
+    ro.product.name
+
 # Include package config fragments
 include $(LOCAL_PATH)/product/*.mk
 

@@ -19,5 +19,8 @@ include device/cyanogen/msm8916-common/BoardConfigCommon.mk
 
 include device/wingtech/wt88047/board/*.mk
 
+# Assertions
+TARGET_BOARD_INFO_FILE := device/wingtech/wt88047/board-info.txt
+
 # inherit from the proprietary version
 -include vendor/wingtech/wt88047/BoardConfigVendor.mk

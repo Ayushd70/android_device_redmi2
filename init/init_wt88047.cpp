@@ -123,6 +123,8 @@ void init_target_properties()
         property_set("ro.product.model", "2014818");
         property_set("ro.product.name", "2014818");
         property_set("ro.telephony.default_network", "9,9");
+        property_set("persist.dbg.volte_avail_ovr", "1");
+        property_set("persist.dbg.vt_avail_ovr", "1");
     }
     /* S88047D1 */
     else if (buf.find("S88047D1") != std::string::npos) {

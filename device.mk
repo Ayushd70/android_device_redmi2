@@ -29,4 +29,4 @@ PRODUCT_SYSTEM_PROPERTY_BLACKLIST += \
 # Include package config fragments
 include $(LOCAL_PATH)/product/*.mk
 
-$(call inherit-product-if-exists, vendor/wingtech/wt88047/wt88047-vendor.mk)
+$(call inherit-product-if-exists, vendor/xiaomi/wt88047/wt88047-vendor.mk)

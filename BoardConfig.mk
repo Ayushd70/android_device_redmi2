@@ -17,10 +17,10 @@ FORCE_32_BIT := true
 
 include device/cyanogen/msm8916-common/BoardConfigCommon.mk
 
-include device/wingtech/wt88047/board/*.mk
+include device/xiaomi/wt88047/board/*.mk
 
 # Assertions
-TARGET_BOARD_INFO_FILE := device/wingtech/wt88047/board-info.txt
+TARGET_BOARD_INFO_FILE := device/xiaomi/wt88047/board-info.txt
 
 # inherit from the proprietary version
--include vendor/wingtech/wt88047/BoardConfigVendor.mk
+-include vendor/xiaomi/wt88047/BoardConfigVendor.mk

@@ -21,7 +21,7 @@ export INITIAL_COPYRIGHT_YEAR=2015
 
 # Required!
 DEVICE=wt88047
-VENDOR=wingtech
+VENDOR=xiaomi
 
 # Load extractutils and do some sanity checks
 MY_DIR="${BASH_SOURCE%/*}"

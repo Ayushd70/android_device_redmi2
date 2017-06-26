@@ -9,4 +9,4 @@ BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 5939100672
 
 # Filesystem
-TARGET_ANDROID_FILESYSTEM_CONFIG_H := device/wingtech/wt88047/android_filesystem_config.h
+TARGET_ANDROID_FILESYSTEM_CONFIG_H := device/xiaomi/wt88047/android_filesystem_config.h

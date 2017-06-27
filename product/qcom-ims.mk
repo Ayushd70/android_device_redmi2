@@ -1,6 +1,5 @@
 # IMS
 PRODUCT_PACKAGES += \
-    init.qti.ims.sh \
     libshim_boringssl \
     libshims_ims
 

@@ -107,7 +107,6 @@ void init_target_properties()
         property_override("ro.product.device", "HM2014811");
         property_override("ro.product.model", "2014811");
         property_override("ro.product.name", "2014811");
-        property_set("ro.telephony.default_network", "9,9");
     }
     /* S88047B1 */
     else if (buf.find("S88047B1") != std::string::npos) {
@@ -115,7 +114,7 @@ void init_target_properties()
         property_override("ro.product.device", "HM2014812");
         property_override("ro.product.model", "2014812");
         property_override("ro.product.name", "2014812");
-        property_set("ro.telephony.default_network", "22,22");
+        property_override("ro.telephony.default_network", "22,22");
         property_set("telephony.lteOnCdmaDevice", "1");
         property_set("persist.radio.sglte.eons_domain", "ps");
     }
@@ -125,7 +124,7 @@ void init_target_properties()
         property_override("ro.product.device", "HM2014821");
         property_override("ro.product.model", "2014821");
         property_override("ro.product.name", "2014821");
-        property_set("ro.telephony.default_network", "22,22");
+        property_override("ro.telephony.default_network", "22,22");
         property_set("telephony.lteOnCdmaDevice", "1");
         property_set("persist.radio.sglte.eons_domain", "ps");
     }
@@ -135,7 +134,6 @@ void init_target_properties()
         property_override("ro.product.device", "HM2014818");
         property_override("ro.product.model", "2014818");
         property_override("ro.product.name", "2014818");
-        property_set("ro.telephony.default_network", "9,9");
         property_set("persist.dbg.volte_avail_ovr", "1");
         property_set("persist.dbg.vt_avail_ovr", "1");
     }
@@ -145,7 +143,6 @@ void init_target_properties()
         property_override("ro.product.device", "HM2014819");
         property_override("ro.product.model", "2014819");
         property_override("ro.product.name", "2014819");
-        property_set("ro.telephony.default_network", "9,9");
     }
     /* S88047E1 */
     else if (buf.find("S88047E1") != std::string::npos) {
@@ -153,7 +150,6 @@ void init_target_properties()
         property_override("ro.product.device", "HM2014817");
         property_override("ro.product.model", "2014817");
         property_override("ro.product.name", "2014817");
-        property_set("ro.telephony.default_network", "9,9");
     }
     /* S86047A1 and S86047A1_CD */
     else if (buf.find("S86047A1") != std::string::npos) {
@@ -161,7 +157,6 @@ void init_target_properties()
         property_override("ro.product.device", "HM2014813");
         property_override("ro.product.model", "2014813");
         property_override("ro.product.name", "2014813");
-        property_set("ro.telephony.default_network", "9,9");
     }
     /* S86047A2 and S86047A2_CD */
     else if (buf.find("S86047A2") != std::string::npos) {
@@ -169,6 +164,5 @@ void init_target_properties()
         property_override("ro.product.device", "HM2014112");
         property_override("ro.product.model", "2014112");
         property_override("ro.product.name", "2014112");
-        property_set("ro.telephony.default_network", "9,9");
     }
 }

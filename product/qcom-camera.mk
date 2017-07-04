@@ -4,7 +4,7 @@ PRODUCT_PACKAGES += \
     libmm-qcamera \
     libshim_camera \
     libstlport \
-    Snap
+    SnapdragonCamera
 
 # Permissions
 PRODUCT_COPY_FILES += \

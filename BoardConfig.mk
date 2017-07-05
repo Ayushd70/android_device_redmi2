@@ -15,7 +15,7 @@
 
 FORCE_32_BIT := true
 
--include device/qcom/msm8916-common/BoardConfigCommon.mk
+-include device/cyanogen/msm8916-common/BoardConfigCommon.mk
 
 include device/xiaomi/wt88047/board/*.mk
 

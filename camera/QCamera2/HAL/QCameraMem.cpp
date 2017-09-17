@@ -36,7 +36,6 @@
 #include <utils/Errors.h>
 #include <utils/Trace.h>
 #include <gralloc_priv.h>
-#include <QComOMXMetadata.h>
 #include <qdMetaData.h>
 
 #include "QCamera2HWI.h"

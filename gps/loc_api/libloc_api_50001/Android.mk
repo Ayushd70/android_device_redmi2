@@ -52,8 +52,11 @@ LOCAL_COPY_HEADERS:= \
    loc_eng_msg.h \
    loc_eng_log.h
 
+<<<<<<< HEAD
 LOCAL_VENDOR_MODULE := true
 
+=======
+>>>>>>> df00b86... wt88047: gps: Cleanup makefiles
 include $(BUILD_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
@@ -64,7 +67,6 @@ LOCAL_MODULE_OWNER := qcom
 LOCAL_MODULE_TAGS := optional
 
 ## Libs
-
 LOCAL_SHARED_LIBRARIES := \
     libutils \
     libcutils \
@@ -86,17 +88,16 @@ ifeq ($(TARGET_BUILD_VARIANT),user)
    LOCAL_CFLAGS += -DTARGET_BUILD_VARIANT_USER
 endif
 
-ifeq ($(TARGET_USES_QCOM_BSP), true)
-LOCAL_CFLAGS += -DTARGET_USES_QCOM_BSP
-endif
-
 ## Includes
 LOCAL_C_INCLUDES:= \
     $(TARGET_OUT_HEADERS)/gps.utils \
     $(TARGET_OUT_HEADERS)/libloc_core \
     $(TARGET_OUT_HEADERS)/libflp
 
+<<<<<<< HEAD
 LOCAL_VENDOR_MODULE := true
+=======
+>>>>>>> df00b86... wt88047: gps: Cleanup makefiles
 LOCAL_MODULE_RELATIVE_PATH := hw
 
 include $(BUILD_SHARED_LIBRARY)

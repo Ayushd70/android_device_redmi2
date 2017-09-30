@@ -59,6 +59,9 @@ LOCAL_MODULE := libgps.utils
 
 LOCAL_MODULE_TAGS := optional
 
+<<<<<<< HEAD
 LOCAL_VENDOR_MODULE := true
 
+=======
+>>>>>>> df00b86... wt88047: gps: Cleanup makefiles
 include $(BUILD_SHARED_LIBRARY)

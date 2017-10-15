@@ -23,6 +23,9 @@
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 
+# must be before including DU part
+TARGET_BOOTANIMATION_SIZE := 640x362
+
 # Inherit from our custom product configuration
 $(call inherit-product, vendor/du/config/common.mk)
 

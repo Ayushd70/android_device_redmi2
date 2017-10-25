@@ -39,7 +39,7 @@ BACKLIGHT_PATH := /sys/class/leds/lcd-backlight/brightness
 
 # Crypto
 TARGET_HW_DISK_ENCRYPTION := true
-TARGET_CRYPTFS_HW_PATH := $(LOCAL_PATH)/cryptfs_hw
+TARGET_CRYPTFS_HW_PATH := $(DEVICE_PATH)/cryptfs_hw
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 131072

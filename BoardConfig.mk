@@ -201,6 +201,9 @@ WIFI_DRIVER_FW_PATH_AP := "ap"
 WIFI_DRIVER_FW_PATH_STA := "sta"
 WPA_SUPPLICANT_VERSION := VER_0_8_X
 
+# Shipping API level (for CTS backward compatibility)
+PRODUCT_SHIPPING_API_LEVEL := 19
+
 # inherit from the proprietary version
 include vendor/wingtech/wt88047/BoardConfigVendor.mk
 include device/wingtech/wt88047/radio.mk

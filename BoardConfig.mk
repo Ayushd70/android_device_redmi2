@@ -29,3 +29,5 @@ include vendor/wingtech/wt88047/BoardConfigVendor.mk
 
 # Assertions
 TARGET_RELEASETOOLS_EXTENSIONS := device/cyanogen/msm8916-common
+
+ALLOW_MISSING_DEPENDENCIES=true

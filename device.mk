@@ -520,6 +520,6 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.usb.host.xml:system/vendor/etc/permissions/android.hardware.usb.host.xml
 
-PRODUCT_ENFORCE_RRO_TARGETS := framework-res
+
 
 

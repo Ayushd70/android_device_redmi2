@@ -392,4 +392,114 @@
          For example, a device with Home, Back and Menu keys would set this
          config to 7. -->
     <integer name="config_deviceHardwareKeys">83</integer>
+
+    <!-- Hardware keys present on the device with the ability to wake, stored as a bit field.
+         This integer should equal the sum of the corresponding value for each
+         of the following keys present:
+             1 - Home
+             2 - Back
+             4 - Menu
+             8 - Assistant (search)
+            16 - App switch
+            32 - Camera
+            64 - Volume rocker
+         For example, a device with Home, Back and Menu keys would set this
+         config to 7. -->
+    <integer name="config_deviceHardwareWakeKeys">64</integer>
+
+    <!-- Control the behavior when the user long presses the app switch button.
+            0 - Nothing
+            1 - Menu key
+            2 - Recent apps view in SystemUI
+            3 - Launch assist intent
+            4 - Voice Search
+            5 - In-app Search
+            6 - Launch camera
+            7 - Turn screen off
+            8 - Last app
+         This needs to match the constants in
+         services/core/java/com/android/server/policy/PhoneWindowManager.java
+    -->
+    <!-- integer name="config_longPressOnAppSwitchBehavior">8</integer -->
+
+    <!-- Control the behavior when the user double-taps the home button.
+            0 - Nothing
+            1 - Menu
+            2 - Recent apps view in SystemUI
+            3 - Launch assist intent
+            4 - Voice Search
+            5 - In-app Search
+         This needs to match the constants in
+         policy/src/com/android/internal/policy/impl/PhoneWindowManager.java
+    -->
+    <integer name="config_doubleTapOnHomeBehavior">0</integer>
+
+    <!-- Display mode remapping table.
+         If the mode names returned by the backend do not match
+         the predefined and translated strings in the Settings
+         app, they can be remapped here. The format is
+         "oldname:newname", one per entry. -->
+    <!-- string-array name="config_displayModeMappings" translatable="false">
+        <item>00default:standard</item>
+        <item>01warm:reading</item>
+        <item>02cool:dynamic</item>
+        <item>37sRGB-native:srgb</item>
+    </string-array -->
+ 
+    <!-- Should we filter any display modes which are unmapped? -->
+    <!-- bool name="config_filterDisplayModes">true</bool -->
+
+    <!-- Indicate whether encryption causes significant performances loss.
+         This MUST NOT be set to true on devices produced in 2016 or later -->
+    <!-- bool name="config_trustLegacyEncryption">true</bool -->
+    <!-- Does the notification LED support multiple colors?
+         Used to decide if the user can change the colors -->
+    <bool name="config_multiColorNotificationLed">true</bool>
+
+    <!-- Is the battery LED intrusive? -->
+    <bool name="config_intrusiveBatteryLed">true</bool>
+
+    <!-- Does the battery LED support multiple colors? -->
+    <bool name="config_multiColorBatteryLed">true</bool>
+
+    <!-- Do the battery/notification LEDs support pulsing?
+         Used to decide if we show pulse settings -->
+    <bool name="config_ledCanPulse">true</bool>
+
+    <!-- Button brightness -->
+    <bool name="config_button_brightness_support">true</bool>
+
+ <!-- Whether the always on display mode is available. -->
+    <bool name="config_dozeAlwaysOnDisplayAvailable">true</bool>
+
+    <!-- Whether the display blanks itself when transition from a doze to a non-doze state -->
+    <bool name="config_displayBlanksAfterDoze">true</bool>
+
+    <!-- Boolean indicating whether the HWC setColorTransform function can be performed efficiently
+         in hardware. -->
+    <bool name="config_setColorTransformAccelerated">true</bool>
+	
+    <!-- Values for GPS configuration -->
+    <string-array translatable="false" name="config_gpsParameters">
+	<item>XTRA_SERVER_1=https://xtrapath1.izatcloud.net/xtra3grc.bin</item>
+	<item>XTRA_SERVER_2=https://xtrapath2.izatcloud.net/xtra3grc.bin</item>
+	<item>XTRA_SERVER_3=https://xtrapath3.izatcloud.net/xtra3grc.bin</item>
+	<item>XTRA_VERSION_CHECK=1</item>
+	<item>ERR_ESTIMATE=0</item>
+	<item>NTP_SERVER=time.izatcloud.net</item>
+	<item>XTRA_CA_PATH=/system/etc/security/cacerts</item>
+	<item>CAPABILITIES=0x37</item>
+	<item>DEBUG_LEVEL=2</item>
+	<item>INTERMEDIATE_POS=0</item>
+	<item>SUPL_VER=0x10000</item>
+        <item>SUPL_ES=0</item>
+        <item>USE_EMERGENCY_PDN_FOR_EMERGENCY_SUPL=1</item>
+        <item>CAPABILITIES=0x37</item>
+        <item>LPP_PROFILE=2</item>
+        <item>NMEA_PROVIDER=0</item>
+        <item>SGLTE_TARGET=0</item>
+        <item>A_GLONASS_POS_PROTOCOL_SELECT=15</item>
+        <item>LPPE_CP_TECHNOLOGY=0</item>
+        <item>LPPE_UP_TECHNOLOGY=0</item>
+    </string-array>
 </resources>

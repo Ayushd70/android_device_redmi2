@@ -529,9 +529,6 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.usb.host.xml:system/vendor/etc/permissions/android.hardware.usb.host.xml
 
-# Extra Packages as per logs
-PRODUCT_PACKAGES += \
-    android.hardware.thermal@1.1-impl \
-    android.hardware.health@1.0-impl
+
 
 

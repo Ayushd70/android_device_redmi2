@@ -425,10 +425,11 @@ PRODUCT_COPY_FILES += \
 
 # Properties
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vendor.audio.sdk.fluencetype=fluence \
+    ro.vendor.audio.sdk.fluencetype=none \
     persist.vendor.audio.fluence.voicecall=true \
-    persist.vendor.audio.fluence.voicerec=false \
-    persist.vendor.audio.fluence.speaker=false
+    persist.vendor.audio.fluence.voicerec=true \
+    persist.vendor.audio.fluence.speaker=false \
+    vendor.audio.offload_wakelock=false
 
 # Camera
 PRODUCT_PACKAGES += \

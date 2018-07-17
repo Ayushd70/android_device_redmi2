@@ -117,8 +117,8 @@ OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 USE_OPENGL_RENDERER := true
 
 # SELinux
-BOARD_SEPOLICY_DIRS += \
-    $(DEVICE_PATH)/sepolicy
+#BOARD_SEPOLICY_DIRS += \
+    #$(DEVICE_PATH)/sepolicy
 
 include device/qcom/sepolicy/sepolicy.mk
 #include device/qcom/sepolicy/legacy-sepolicy.mk
@@ -148,10 +148,3 @@ TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
 BOARD_NO_SECURE_DISCARD := true
-
-# SELinux
-#BOARD_SEPOLICY_DIRS += \
-   # $(DEVICE_PATH)/sepolicy
-
-# inherit from the proprietary version
-include vendor/wingtech/wt88047/BoardConfigVendor.mk

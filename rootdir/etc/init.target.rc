@@ -38,7 +38,7 @@ on boot
     write /sys/block/mmcblk0/bdi/read_ahead_kb 128
 
 on init 
-   export LD_SHIMS_LIBS "/system/vendor/lib/libmmcamera2_imglib_modules.so|libshim_camera.so"
+   export LD_SHIMS_LIBS "/system/vendor/bin/mm-qcamera-daemon|libshim_camera.so:/system/vendor/lib/libmmcamera2_imglib_modules.so|libshim_camera.so"
 
 service imsqmidaemon /system/vendor/bin/imsqmidaemon
     class main

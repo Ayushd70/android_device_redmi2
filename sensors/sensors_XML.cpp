@@ -31,6 +31,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include "sensors_XML.h"
 #include <cutils/log.h>
 #include "unistd.h"
+#include <string.h>
 #include <fcntl.h>
 #include <sys/stat.h>
 #include <private/android_filesystem_config.h>

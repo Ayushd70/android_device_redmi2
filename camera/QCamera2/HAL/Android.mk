@@ -32,10 +32,10 @@ LOCAL_CFLAGS += -DDEFAULT_DENOISE_MODE_ON
 LOCAL_C_INCLUDES := \
     $(LOCAL_PATH)/../stack/common \
     frameworks/native/include/media/openmax \
-    $(TOP)/hardware/qcom/disply/msm8916/libgralloc \
-    $(TOP)/hardware/qcom/display/libqdutils \
-    $(TOP)/hardware/qcom/display/msm8916/libqservice \
-    $(TOP)/hardware/qcom/media/msm8916/libstagefrighthw \
+    hardware/qcom/display-caf-msm8916/libgralloc \
+    hardware/qcom/display-caf-msm8916/libqdutils \
+    hardware/qcom/display-caf-msm8916/libqservice \
+    hardware/qcom/media-caf-msm8916/libstagefrighthw \
     system/media/camera/include \
     $(LOCAL_PATH)/../../mm-image-codec/qexif \
     $(LOCAL_PATH)/../../mm-image-codec/qomx_core \

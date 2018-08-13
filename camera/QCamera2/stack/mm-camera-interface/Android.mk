@@ -24,7 +24,7 @@ LOCAL_COPY_HEADERS += ../common/cam_types.h
 LOCAL_C_INCLUDES := \
     $(LOCAL_PATH)/inc \
     $(LOCAL_PATH)/../common \
-    $(TOP)/hardware/qcom/media/msm8916/mm-core/inc \
+    hardware/qcom/media-caf-msm8916/mm-core/inc \
     system/media/camera/include
 
 LOCAL_C_INCLUDES += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include

@@ -346,8 +346,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.usb.host.xml:system/etc/permissions/android.hardware.usb.host.xml
 
-PRODUCT_ENFORCE_RRO_TARGETS := framework-res
-
 include device/wingtech/wt88047/default-prop.mk
 
 # HIDL

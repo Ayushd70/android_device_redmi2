@@ -311,9 +311,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml
 
-# IMS
+# LIGHTS
 PRODUCT_PACKAGES += \
-    libshims_ims
+    android.hardware.light@2.0-impl \
+    lights.msm8916
 
 # Thermal
 PRODUCT_COPY_FILES += \

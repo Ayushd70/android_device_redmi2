@@ -79,3 +79,9 @@ BOARD_SEPOLICY_DIRS += \
 
 # inherit from the proprietary version
 include vendor/wingtech/wt88047/BoardConfigVendor.mk
+
+# HAL
+TARGET_QCOM_AUDIO_VARIANT := caf-msm8916
+#TARGET_QCOM_BLUETOOTH_VARIANT := caf-msm8916
+TARGET_QCOM_DISPLAY_VARIANT := caf-msm8916
+TARGET_QCOM_MEDIA_VARIANT := caf-msm8916

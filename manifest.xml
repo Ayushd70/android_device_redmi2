@@ -59,10 +59,25 @@
         <version>1.0</version>
         <interface>
             <name>ICryptoFactory</name>
+            <instance>widevine</instance>
             <instance>default</instance>
         </interface>
         <interface>
             <name>IDrmFactory</name>
+            <instance>default</instance>
+            <instance>widevine</instance>
+        </interface>
+    </hal>
+        <hal format="hidl">
+        <name>android.hardware.media.omx</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IOmx</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
+            <name>IOmxStore</name>
             <instance>default</instance>
         </interface>
     </hal>

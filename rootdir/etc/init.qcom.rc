@@ -1,3 +1,4 @@
+
 # Copyright (c) 2009-2012, 2014, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -83,6 +84,9 @@ on post-fs-data
     mkdir /data/misc/location/gpsone_d 0770 system gps
     mkdir /data/misc/location/quipc 0770 gps system
     mkdir /data/misc/location/gsiff 0770 gps gps
+
+    # Raise SDCC idle timeout value to 10 seconds
+    write /sys/devices/platform/msm_sdcc.3/idle_timeout 10
 
     # Create directory from IMS services
     mkdir /data/shared 0755
@@ -220,12 +224,12 @@ on property:bluetooth.isEnabled=true
 on property:persist.env.fastdorm.enabled=true
     setprop persist.radio.data_no_toggle 1
 
-service irsc_util /system/vendor/bin/irsc_util "/system/vendor/etc/sec_config"
+service irsc_util /vendor/bin/irsc_util "/system/vendor/etc/sec_config"
     class main
     user root
     oneshot
 
-service rmt_storage /system/vendor/bin/rmt_storage
+service rmt_storage /vendor/bin/rmt_storage
     class core
     user root
     group system wakelock
@@ -253,18 +257,17 @@ on property:hw.fm.init=1
     write /sys/module/radio_iris_transport/parameters/fmsmd_set 1
 
 # QMUX must be in multiple groups to support external process connections
-service qmuxd /system/vendor/bin/qmuxd
+service qmuxd /vendor/bin/qmuxd
     class main
     user root
     group radio audio bluetooth gps oem_2950 wakelock
     writepid /dev/cpuset/system-background/tasks
 
-service netmgrd /system/vendor/bin/netmgrd
+service netmgrd /vendor/bin/netmgrd
     class main
     user root
-    group root wifi wakelock radio inet
+    group root wifi wakelock radio inet oem_2950
     writepid /dev/cpuset/system-background/tasks
-
 
 # Adjust socket buffer to enlarge TCP receive window for high bandwidth
 # but only if ro.data.large_tcp_window_size property is set.
@@ -273,9 +276,9 @@ on property:ro.data.large_tcp_window_size=true
 
 service wpa_supplicant /vendor/bin/hw/wpa_supplicant \
     -ip2p0 -Dnl80211 -c/data/misc/wifi/p2p_supplicant.conf \
-    -I/system/vendor/etc/wifi/p2p_supplicant_overlay.conf -N \
+    -I/vendor/etc/wifi/p2p_supplicant_overlay.conf -N \
     -iwlan0 -Dnl80211 -c/data/misc/wifi/wpa_supplicant.conf \
-    -I/system/vendor/etc/wifi/wpa_supplicant_overlay.conf \
+    -I/vendor/etc/wifi/wpa_supplicant_overlay.conf \
     -O/data/misc/wifi/sockets -puse_p2p_group_interface=1 \
     -e/data/misc/wifi/entropy.bin -g@android:wpa_wlan0
 #   we will start as root and wpa_supplicant will switch to user wifi
@@ -316,7 +319,7 @@ on property:persist.usb.chgdisabled=1
 on property:persist.usb.chgdisabled=0
     write /sys/class/power_supply/battery/charging_enabled 1
 
-service qseecomd /system/vendor/bin/qseecomd
+service qseecomd /vendor/bin/qseecomd
    class core
    user root
    group root
@@ -335,13 +338,13 @@ service thermal-engine /vendor/bin/thermal-engine
    group root
    writepid /dev/cpuset/system-background/tasks
 
-service time_daemon /system/vendor/bin/time_daemon
+service time_daemon /vendor/bin/time_daemon
    class late_start
    user root
    group root
    writepid /dev/cpuset/system-background/tasks
 
-service ppd /system/vendor/bin/mm-pp-daemon
+service ppd /vendor/bin/mm-pp-daemon
     class late_start
     disabled
     user system
@@ -354,12 +357,12 @@ on property:init.svc.surfaceflinger=stopped
 on property:init.svc.surfaceflinger=running
     start ppd
 
-service wcnss-service /system/vendor/bin/wcnss_service
+service wcnss-service /vendor/bin/wcnss_service
     class main
     user system
     group system wifi radio
     oneshot
 
-service qcom-mem /system/vendor/bin/init.qcom.mem.sh
+service qcom-mem /vendor/bin/init.qcom.mem.sh
     disabled
     oneshot

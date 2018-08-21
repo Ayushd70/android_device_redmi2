@@ -196,3 +196,10 @@ WPA_SUPPLICANT_VERSION := VER_0_8_X
 # inherit from the proprietary version
 include vendor/wingtech/wt88047/BoardConfigVendor.mk
 include device/wingtech/wt88047/radio.mk
+
+#HALS 
+TARGET_QCOM_AUDIO_VARIANT := caf-msm8916
+TARGET_QCOM_BLUETOOTH_VARIANT := caf-msm8916
+TARGET_QCOM_DISPLAY_VARIANT := caf-msm8916
+TARGET_QCOM_MEDIA_VARIANT := caf-msm8916
+TARGET_QCOM_WLAN_VARIANT := wlan-caf

@@ -1,4 +1,3 @@
-#
 # Copyright (C) 2016 The CyanogenMod Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -51,8 +50,6 @@ PRODUCT_PACKAGES += \
     init.qcom.ssr.rc \
     init.recovery.qcom.rc \
     ueventd.qcom.rc \
-    init.qcom.ims.rc \
-    init.qti.ims.sh \
     init.qcom.bt.sh
 
 # Media

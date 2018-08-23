@@ -180,7 +180,6 @@ USE_OPENGL_RENDERER := true
 
 # Shims
 TARGET_LD_SHIM_LIBS := \
-    /system/vendor/bin/mm-qcamera-daemon|libshim_camera.so \
     /system/vendor/lib/libflp.so|libshims_flp.so \
     /system/vendor/lib/libizat_core.so|libshims_get_process_name.so \
     /system/vendor/lib/libmmcamera2_imglib_modules.so|libshim_camera.so \
@@ -191,15 +190,8 @@ BOARD_HAS_QCOM_WLAN := true
 BOARD_HOSTAPD_DRIVER := NL80211
 BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_qcwcn
 BOARD_WLAN_DEVICE := qcwcn
-BOARD_WPA_SUPPLICANT_DRIVER := NL80211
-BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_qcwcn
-PRODUCT_VENDOR_MOVE_ENABLED := true
-TARGET_USES_QCOM_WCNSS_QMI := true
-
-PRODUCT_VENDOR_MOVE_ENABLED := true
 TARGET_USES_QCOM_WCNSS_QMI := false
 
->>>>>>> 793940a0... msm8916-common:Change Flags for Audio and wifi:BoardConfigCommon.mk
 WIFI_DRIVER_FW_PATH_AP := "ap"
 WIFI_DRIVER_FW_PATH_STA := "sta"
 WPA_SUPPLICANT_VERSION := VER_0_8_X
@@ -210,7 +202,7 @@ include device/wingtech/wt88047/radio.mk
 
 #HALS 
 TARGET_QCOM_AUDIO_VARIANT := caf-msm8916
-TARGET_QCOM_BLUETOOTH_VARIANT := caf-msm8916
+TARGET_QCOM_BLUETOOTH_VARIANT := bt-caf
 TARGET_QCOM_DISPLAY_VARIANT := caf-msm8916
 TARGET_QCOM_MEDIA_VARIANT := caf-msm8916
 TARGET_QCOM_WLAN_VARIANT := wlan-caf

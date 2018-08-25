@@ -314,9 +314,6 @@ PRODUCT_PACKAGES += \
     android.hardware.light@2.0-impl \
     lights.msm8916
 
-# Thermal
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/thermal-engine.conf:system/etc/thermal-engine.conf
 
 # Wifi
 PRODUCT_COPY_FILES += \

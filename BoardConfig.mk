@@ -175,8 +175,7 @@ USE_OPENGL_RENDERER := true
 #BOARD_SEPOLICY_DIRS += \
     #$(DEVICE_PATH)/sepolicy
 
-#include device/qcom/sepolicy/sepolicy.mk
-#include device/qcom/sepolicy/legacy-sepolicy.mk
+include device/qcom/sepolicy-legacy/sepolicy.mk
 
 # Shims
 TARGET_LD_SHIM_LIBS := \

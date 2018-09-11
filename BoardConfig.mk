@@ -18,7 +18,7 @@ FORCE_32_BIT := true
 DEVICE_PATH := device/wingtech/wt88047
 
 # ANT+
-BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
+#BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
 
 # Architecture
 ifneq ($(FORCE_32_BIT),true)

@@ -64,6 +64,7 @@ BOARD_GLOBAL_CFLAGS += -DCAMERA_VENDOR_L_COMPAT
 USE_DEVICE_SPECIFIC_CAMERA := true
 TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS := true
 TARGET_PROCESS_SDK_VERSION_OVERRIDE := \
+        /system/bin/cameraserver=22 \
 	/system/bin/mediaserver=22 \
 	/system/vendor/bin/mm-qcamera-daemon=22
 
@@ -87,7 +88,6 @@ TARGET_USES_NEW_ION_API := true
 AUDIO_FEATURE_ENABLED_FM_POWER_OPT := true
 BOARD_HAVE_QCOM_FM := true
 TARGET_QCOM_NO_FM_FIRMWARE := true
-
 
 # Charger
 BOARD_CHARGER_ENABLE_SUSPEND := true

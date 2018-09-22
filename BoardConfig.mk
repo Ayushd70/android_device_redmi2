@@ -66,6 +66,7 @@ TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS := true
 TARGET_NEEDS_LEGACY_CAMERA_HAL1_DYN_NATIVE_HANDLE := true
 TARGET_DESTROYED_MUTEX_USAGE_WHITELIST := system/vendor/bin/mm-qcamera-daemon
 TARGET_PROCESS_SDK_VERSION_OVERRIDE := \
+        /system/bin/mediaserver=23 \
 	/system/vendor/bin/mm-qcamera-daemon=23
 
 # Crypto
@@ -159,7 +160,6 @@ TARGET_HAS_NO_WIFI_STATS := true
 TARGET_USES_INTERACTION_BOOST := true
 
 # Lights
-BOARD_LIGHTS_VARIANT := aw2013
 TARGET_PROVIDES_LIBLIGHT := true
 
 # Properties

@@ -112,7 +112,7 @@ TARGET_KERNEL_SOURCE := kernel/wingtech/msm8916
 TARGET_KERNEL_CONFIG := lineageos_wt88047_defconfig
 BOARD_KERNEL_CMDLINE += phy-msm-usb.floated_charger_enable=1 console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 androidboot.selinux=permissive
 KERNEL_TOOLCHAIN := $(OUT_DIR)/../prebuilts/gcc/$(HOST_OS)-x86/arm/linaro/bin
-TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-eabi-
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-linux-gnueabi-
 BOARD_KERNEL_BASE := 0x80000000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_TAGS_OFFSET := 0x01E00000

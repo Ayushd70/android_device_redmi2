@@ -112,3 +112,6 @@ ro.fusion.magfield.max=250
 
 # Vendor security patch level
 ro.lineage.build.vendor_security_patch=2017-01-01
+
+#Rescue Party
+persist.sys.disable_rescue=true

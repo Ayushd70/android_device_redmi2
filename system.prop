@@ -2,7 +2,6 @@
 media.aac_51_output_enabled=true
 ro.am.reschedule_service=true
 ro.config.max_starting_bg=8
-persist.media.treble_omx=false
 
 # Audio
 af.fast_track_multiplier=1

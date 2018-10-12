@@ -210,7 +210,6 @@ PRODUCT_SHIPPING_API_LEVEL := 19
 
 # inherit from the proprietary version
 include vendor/wingtech/wt88047/BoardConfigVendor.mk
-include device/wingtech/wt88047/radio.mk
 
 #HALS 
 TARGET_QCOM_AUDIO_VARIANT := caf-msm8916

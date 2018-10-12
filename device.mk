@@ -338,17 +338,6 @@ PRODUCT_COPY_FILES += \
 
 include device/wingtech/wt88047/default-prop.mk
 
-PRODUCT_PACKAGES += \
-    libwpa_client
-    
-    # IMS
-PRODUCT_PACKAGES += \
-    ims-ext-common \
-    telephony-ext
-    
- PRODUCT_BOOT_JARS += \
-    telephony-ext
-
 # HIDL
 PRODUCT_PACKAGES += \
     android.hidl.base@1.0 \

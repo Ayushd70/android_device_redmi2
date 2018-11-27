@@ -86,7 +86,6 @@ TARGET_USES_ION := true
 TARGET_USES_NEW_ION_API := true
 
 # Filesystem
-TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
 TARGET_USES_MKE2FS := true
 
 # FM

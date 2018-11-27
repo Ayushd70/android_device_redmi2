@@ -1,3 +1,3 @@
-add_lunch_combo aosp_wt88047-eng
-add_lunch_combo aosp_wt88047-userdebug
+add_lunch_combo potato_wt88047-eng
+add_lunch_combo potato_wt88047-userdebug
 

@@ -8,8 +8,7 @@
 # value of any variable that isn't set in this file or in a file that
 # it includes.
 #
-  
+
 PRODUCT_MAKEFILES := \
   $(LOCAL_DIR)/full_wt88047.mk \
-  $(LOCAL_DIR)/aosp_wt88047.mk 
-  
+  $(LOCAL_DIR)/potato_wt88047.mk

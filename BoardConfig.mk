@@ -206,3 +206,6 @@ include device/wingtech/wt88047/radio.mk
 
 #DEXPREOPT
 WITH_DEXPREOPT := false
+
+# Exclude serif fonts for saving system.img size.
+EXCLUDE_SERIF_FONTS := true

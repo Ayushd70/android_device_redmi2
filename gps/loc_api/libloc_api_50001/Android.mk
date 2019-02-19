@@ -52,11 +52,6 @@ LOCAL_COPY_HEADERS:= \
    loc_eng_msg.h \
    loc_eng_log.h
 
-<<<<<<< HEAD
-LOCAL_VENDOR_MODULE := true
-
-=======
->>>>>>> df00b86... wt88047: gps: Cleanup makefiles
 include $(BUILD_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
@@ -94,10 +89,6 @@ LOCAL_C_INCLUDES:= \
     $(TARGET_OUT_HEADERS)/libloc_core \
     $(TARGET_OUT_HEADERS)/libflp
 
-<<<<<<< HEAD
-LOCAL_VENDOR_MODULE := true
-=======
->>>>>>> df00b86... wt88047: gps: Cleanup makefiles
 LOCAL_MODULE_RELATIVE_PATH := hw
 
 include $(BUILD_SHARED_LIBRARY)

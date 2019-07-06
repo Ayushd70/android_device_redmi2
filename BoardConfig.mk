@@ -132,11 +132,9 @@ BOARD_RAMDISK_OFFSET     := 0x02000000
 DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/manifest.xml
 DEVICE_MATRIX_FILE := $(DEVICE_PATH)/compatibility_matrix.xml
 
-# Lights
+#Lights
+BOARD_LIGHTS_VARIANT := aw2013	
 TARGET_PROVIDES_LIBLIGHT := true
-
-# Lineage HW
-BOARD_HARDWARE_CLASS += hardware/lineage/lineagehw
 
 # Media
 TARGET_USES_MEDIA_EXTENSIONS := true

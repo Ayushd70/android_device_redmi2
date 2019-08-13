@@ -64,9 +64,9 @@ BOARD_GLOBAL_CFLAGS += -DCAMERA_VENDOR_L_COMPAT
 USE_DEVICE_SPECIFIC_CAMERA := true
 TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS := true
 TARGET_PROCESS_SDK_VERSION_OVERRIDE := \
-        /system/bin/cameraserver=22 \
-	/system/bin/mediaserver=22 \
-	/system/vendor/bin/mm-qcamera-daemon=22
+        /system/bin/cameraserver=23 \
+	/system/bin/mediaserver=23 \
+	/system/vendor/bin/mm-qcamera-daemon=23
 
 # Crypto
 #TARGET_HW_DISK_ENCRYPTION := true

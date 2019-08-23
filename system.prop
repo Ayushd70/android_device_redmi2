@@ -16,7 +16,7 @@ vendor.audio_hal.period_size=192
 vendor.audio.av.streaming.offload.enable=true
 vendor.audio.offload.buffer.size.kb=64
 vendor.audio.offload.gapless.enabled=true
-vendor.voice.path.for.pcm.voip=tru
+vendor.voice.path.for.pcm.voip=true
 
 # Bluetooth
 vendor.qcom.bluetooth.soc=smd

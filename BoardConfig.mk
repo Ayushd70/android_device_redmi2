@@ -208,7 +208,7 @@ PRODUCT_SHIPPING_API_LEVEL := 19
 include vendor/wingtech/wt88047/BoardConfigVendor.mk
 
 #DEXPREOPT
-WITH_DEXPREOPT := false
+WITH_DEXPREOPT := true
 
 # Exclude serif fonts for saving system.img size.
 EXCLUDE_SERIF_FONTS := true
